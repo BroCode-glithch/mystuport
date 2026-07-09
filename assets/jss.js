@@ -20,11 +20,19 @@ const projects = [
     {
         id: 1,
 
+        featured: true,
+
         title: "ClassAttend Attendance Portal",
+
+        category: "Academic Project",
+
+        status: "Completed",
+
+        year: "2025",
 
         image: "./assets/img/classattend-portal.png",
 
-        description: "Remote Attendance Made Simple. ClassAttend is a web application that allows students to mark their attendance remotely using a unique code provided by their lecturers, HOCs, or school administrators. This system streamlines the attendance process, making it more efficient and convenient for both students and faculty.",
+        description: "Remote Attendance Made Simple. ClassAttend is a web application that allows students to mark their attendance remotely using a unique code provided by lecturers, HODs, or school administrators. It simplifies attendance management for institutions while providing a seamless experience for students.",
 
         technologies: [
             "HTML",
@@ -36,19 +44,34 @@ const projects = [
             "Resend"
         ],
 
+        role: "Frontend & Full Stack Developer",
+
+        client: "Personal Project",
+
+        duration: "2 Months",
+
         demo: "https://classtend.vercel.app/",
 
         github: "https://github.com/BroCode-glithch/classattend"
+
     },
 
     {
         id: 2,
 
+        featured: true,
+
         title: "DailyDew CBT",
+
+        category: "Educational Platform",
+
+        status: "In Development",
+
+        year: "2026",
 
         image: "./assets/img/dailydew.png",
 
-        description: "An online CBT platform for schools.",
+        description: "DailyDew CBT is a computer-based testing platform designed for schools and training institutions. It enables administrators to create examinations, manage candidates, monitor performance, and generate detailed results through a modern web interface.",
 
         technologies: [
             "Laravel",
@@ -56,30 +79,50 @@ const projects = [
             "MySQL"
         ],
 
+        role: "Backend & Full Stack Developer",
+
+        client: "DailyDew Tech Innovations",
+
+        duration: "Ongoing",
+
         demo: "https://cbt.dailydewtech.com.ng/",
 
         github: "https://github.com/yourusername/dailydew"
+
     },
 
     {
         id: 3,
+
+        featured: true,
+
         title: "MamuzWorld Consult",
+
+        category: "Business Website",
+
+        status: "Completed",
+
+        year: "2025",
 
         image: "./assets/img/mamuzworldconsult.png",
 
-        description: "MamuzWorld Consult is a leading branding, printing, and custom merchandise company based in Otta, Ogun State, Nigeria. We combine creative expertise with cutting-edge technology to deliver premium branded products for businesses, events, and individuals.",
+        description: "A modern corporate website developed for MamuzWorld Consult, showcasing branding, printing, promotional merchandise, and business services. The website emphasizes professionalism, trust, and an engaging customer experience.",
 
         technologies: [
             "HTML",
             "CSS",
             "JavaScript",
-            "React",
-            "TypeScript",
-            "Supabase",
-            "Resend"
+            "React"
         ],
 
+        role: "Frontend Developer",
+
+        client: "MamuzWorld Consult",
+
+        duration: "3 Weeks",
+
         demo: "https://mamuzworldconsult.vercel.app/",
+
         github: "https://github.com/yourusername/mamuzworldconsult"
 
     },
@@ -87,71 +130,149 @@ const projects = [
     {
         id: 4,
 
+        featured: true,
+
         title: "Toluwalase Interior Decoration",
+
+        category: "Client Website",
+
+        status: "Completed",
+
+        year: "2025",
 
         image: "./assets/img/toluwalaseintdecor.png",
 
-        description: "Toluwalase Interior Decoration is a leading interior decoration company based in Yaba and Ikorodu, Lagos State, Nigeria. We specialize in transforming spaces into beautiful and functional environments that reflect our clients' unique tastes and lifestyles. Transforming Nigerian homes into luxury spaces with premium curtains, wallpapers, blinds and bespoke interior décor since 2012.",
+        description: "A responsive business website showcasing luxury curtains, wallpapers, blinds, and bespoke interior décor services. The platform strengthens the company's online presence while making it easy for customers to explore products and request quotations.",
 
         technologies: [
             "HTML",
             "CSS",
-            "JavaScript",
+            "JavaScript"
         ],
+
+        role: "Frontend Developer",
+
+        client: "Toluwalase Interior Decoration",
+
+        duration: "2 Weeks",
 
         demo: "https://toluwalaseinteriordecor.vercel.app/",
 
-        github: "https://github.com/yourusername/toluwalaseintdecor",
+        github: "https://github.com/yourusername/toluwalaseintdecor"
+
     }
 
 ];
+
 const projectGrid = document.querySelector(".project-grid");
 
 if (projectGrid) {
-    
+
     let html = "";
 
     projects.forEach(project => {
 
         html += `
-            <article class="project-card">
+        
+        <article class="project-card">
 
-                <img src="${project.image}" alt="${project.title}">
+            <img
+                src="${project.image}"
+                alt="${project.title}"
+            >
 
-                <div class="project-content">
+            <div class="project-content">
+
+                <div class="project-header">
 
                     <h3>${project.title}</h3>
 
-                    <p>${project.description}</p>
-
-                    <div class="project-tech">
-                        ${project.technologies
-                            .map(tech => `<span class="tech-tag">${tech}</span>`)
-                            .join("")}
-                    </div>
-
-                    <div class="project-buttons">
-
-                        <a href="${project.demo}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                            Live Demo
-                        </a>
-
-                        <a href="${project.github}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                            GitHub
-                        </a>
-
-                    </div>
+                    <span class="project-status ${project.status.toLowerCase().replace(/\s+/g,"-")}">
+                        ${project.status}
+                    </span>
 
                 </div>
 
-            </article>
+                <div class="project-meta">
+
+                    <span>
+                        <i class="fa-solid fa-folder-open"></i>
+                        ${project.category}
+                    </span>
+
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                        ${project.year}
+                    </span>
+
+                </div>
+
+                <p>
+                    ${project.description}
+                </p>
+
+                <div class="project-tech">
+
+                    ${project.technologies.map(tech => `
+                        <span class="tech-tag">${tech}</span>
+                    `).join("")}
+
+                </div>
+
+                <div class="project-info">
+
+                    <span>
+                        <i class="fa-solid fa-user"></i>
+                        ${project.client}
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-laptop-code"></i>
+                        ${project.role}
+                    </span>
+
+                    <span>
+                        <i class="fa-regular fa-clock"></i>
+                        ${project.duration}
+                    </span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a
+                        href="${project.demo}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary">
+
+                        Live Demo
+
+                    </a>
+
+                    <a
+                        href="${project.github}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-secondary">
+
+                        GitHub
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
         `;
 
     });
 
     projectGrid.innerHTML = html;
-}
 
+}
 // CERTIFICATES
 
 const certificates = [
