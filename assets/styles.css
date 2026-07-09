@@ -1050,6 +1050,46 @@ header{
 
     }
 
+    .acad-planner{
+
+        flex-direction:column-reverse;
+
+        text-align:center;
+
+        gap:40px;
+
+    }
+
+    .planner-content p{
+
+        max-width:100%;
+
+    }
+
+    .planner-buttons{
+
+        justify-content:center;
+
+    }
+
+    .planner-image img{
+
+        width:280px;
+
+    }
+
+    .status-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .status-card{
+
+        padding:30px 20px;
+
+    }
+
 }
 
 @media (max-width:500px){
@@ -2370,6 +2410,1168 @@ TECH STACK
     transform:translateY(-10px) scale(1.08);
 
     cursor:pointer;
+
+}
+
+
+/*===================================
+ACADEMIC PLANNER HERO
+===================================*/
+
+.acad-planner{
+
+    width:min(90%,1200px);
+
+    margin:90px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:70px;
+
+}
+
+.planner-content{
+
+    flex:1;
+
+}
+
+.planner-content h1{
+
+    font-size:3rem;
+
+    line-height:1.2;
+
+    margin:20px 0;
+
+    color:var(--dark);
+
+}
+
+.planner-content p{
+
+    max-width:650px;
+
+    color:var(--gray);
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.planner-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.planner-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.planner-image img{
+
+    width:420px;
+
+    max-width:100%;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.5s;
+
+}
+
+.planner-image img:hover{
+
+    transform:translateY(-10px) scale(1.02);
+
+}
+
+/*===================================
+ACADEMIC STATUS
+===================================*/
+
+.academic-status{
+
+    width:min(90%,1200px);
+
+    margin:100px auto;
+
+}
+
+.status-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.status-card{
+
+    background:var(--white);
+
+    border-radius:18px;
+
+    padding:35px 30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s ease;
+
+    border-top:5px solid transparent;
+
+}
+
+.status-card:hover{
+
+    transform:translateY(-10px);
+
+    border-top-color:var(--primary);
+
+    cursor:pointer;
+
+}
+
+.status-card i{
+
+    font-size:2.4rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.status-card h3{
+
+    margin-bottom:12px;
+
+    font-size:1.2rem;
+
+}
+
+.status-card p{
+
+    color:var(--gray);
+
+    font-weight:500;
+
+    line-height:1.7;
+
+}
+
+/*===================================
+SEMESTER COURSES
+===================================*/
+
+.semester-courses{
+
+    width:min(90%,1200px);
+
+    margin:100px auto;
+
+}
+
+.course-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.course-card{
+
+    background:var(--white);
+
+    padding:35px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.course-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.course-card i{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:#eef4ff;
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+}
+
+.course-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+.course-card h4{
+
+    margin-bottom:15px;
+
+    font-size:1.1rem;
+
+    line-height:1.5;
+
+}
+
+.course-card span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    background:#eef4ff;
+
+    color:var(--primary);
+
+    border-radius:30px;
+
+    font-weight:600;
+
+}
+
+.course-header{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.course-header i{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+}
+
+.course-code{
+
+    margin:0;
+
+}
+
+.course-code{
+
+    display:inline-block;
+
+    margin:18px 0;
+
+    padding:8px 18px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.course-card p{
+
+    color:var(--gray);
+
+    font-weight:600;
+
+}
+
+
+/*===================================
+SEMESTER SUMMARY
+===================================*/
+
+.semester-summary{
+
+    width:min(90%,1200px);
+
+    margin:100px auto;
+
+}
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.summary-card{
+
+    background:linear-gradient(135deg,var(--primary),#4f7df3);
+
+    color:var(--white);
+
+    text-align:center;
+
+    padding:40px 25px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s ease;
+
+}
+
+.summary-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.summary-card i{
+
+    font-size:2.6rem;
+
+    margin-bottom:20px;
+
+}
+
+.summary-card h3{
+
+    font-size:2.4rem;
+
+    margin-bottom:12px;
+
+}
+
+.summary-card p{
+
+    opacity:.95;
+
+    font-weight:500;
+
+}
+
+/*===================================
+ACADEMIC CALENDAR
+===================================*/
+
+.academic-calendar{
+
+    width:min(90%,1200px);
+
+    margin:100px auto;
+
+}
+
+.calendar-container{
+
+    background:var(--white);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    margin-top:50px;
+
+}
+
+.calendar-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.calendar-header h3{
+
+    font-size:1.7rem;
+
+    color:var(--primary);
+
+}
+
+.calendar-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#eef4ff;
+
+    color:var(--primary);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.calendar-btn:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.calendar-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:10px;
+
+}
+
+.day-name{
+
+    text-align:center;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    padding:15px 0;
+
+}
+
+.day{
+
+    min-height:90px;
+
+    border-radius:16px;
+
+    background:#f8f9fc;
+
+    padding:10px;
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:flex-start;
+
+    font-weight:600;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+.day:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.day.empty{
+
+    background:transparent;
+
+    pointer-events:none;
+
+}
+
+.day.today{
+
+    border:2px solid var(--primary);
+
+}
+
+.event-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    bottom:10px;
+
+    right:10px;
+
+}
+
+.assignment-dot{
+
+    background:#2563eb;
+
+}
+
+.quiz-dot{
+
+    background:#f59e0b;
+
+}
+
+.project-dot{
+
+    background:#16a34a;
+
+}
+
+.exam-dot{
+
+    background:#dc2626;
+
+}
+
+.calendar-legend{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+
+}
+
+.calendar-legend div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.legend{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+}
+
+.legend.assignment{
+
+    background:#2563eb;
+
+}
+
+.legend.quiz{
+
+    background:#f59e0b;
+
+}
+
+.legend.project{
+
+    background:#16a34a;
+
+}
+
+.legend.exam{
+
+    background:#dc2626;
+
+}
+
+@media(max-width:768px){
+
+    .calendar-grid{
+
+        gap:5px;
+
+    }
+
+    .day{
+
+        min-height:60px;
+
+        font-size:.9rem;
+
+    }
+
+}
+
+/*===================================
+UPCOMING ACADEMIC ACTIVITIES
+===================================*/
+
+.academic-activities{
+
+    width:min(90%,1200px);
+
+    margin:100px auto;
+
+}
+
+.activities-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+    margin-top:60px;
+
+}
+
+.activity-card{
+
+    background:var(--white);
+
+    padding:25px 30px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    transition:.35s;
+
+    border-left:6px solid var(--primary);
+
+}
+
+.activity-card:hover{
+
+    transform:translateX(8px);
+
+}
+
+.activity-info h3{
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+.activity-info p{
+
+    color:var(--gray);
+
+    margin-bottom:8px;
+
+}
+
+.activity-date{
+
+    display:inline-block;
+
+    background:#eef4ff;
+
+    color:var(--primary);
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.activity-type{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.5rem;
+
+    color:#fff;
+
+}
+
+.assignment-bg{
+
+    background:#2563eb;
+
+}
+
+.quiz-bg{
+
+    background:#f59e0b;
+
+}
+
+.project-bg{
+
+    background:#16a34a;
+
+}
+
+.exam-bg{
+
+    background:#dc2626;
+
+}
+
+@media(max-width:768px){
+
+    .activity-card{
+
+        flex-direction:column-reverse;
+
+        text-align:center;
+
+        gap:20px;
+
+    }
+
+}
+
+/*===================================
+ACADEMIC PROGRESS
+===================================*/
+
+.academic-progress{
+
+    width:min(90%,1200px);
+
+    margin:100px auto;
+
+}
+
+.progress-container{
+
+    background:var(--white);
+
+    padding:45px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    margin-top:50px;
+
+}
+
+.progress-item{
+
+    margin-bottom:35px;
+
+}
+
+.progress-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+.progress-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+
+}
+
+.progress-title span:first-child{
+
+    color:#333;
+
+}
+
+.progress-title span:last-child{
+
+    color:var(--primary);
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:14px;
+
+    background:#edf2f7;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:0;
+
+    height:100%;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        #4f8cff
+    );
+
+    transition:width 1.8s ease;
+
+}
+
+.progress-fill{
+
+    width:0;
+
+    height:100%;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        #4f8cff
+    );
+
+    transition:width 2s ease;
+
+}
+
+/*===================================
+ACADEMIC GOALS
+===================================*/
+
+.academic-goals{
+
+    width:min(90%,1200px);
+
+    margin:100px auto;
+
+}
+
+.goals-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.goals-grid .goal-card{
+
+    cursor: pointer;
+
+}
+
+.goal-card{
+
+    background:var(--white);
+
+    padding:40px 35px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s ease;
+
+    border-top:5px solid transparent;
+
+}
+
+.goal-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--primary);
+
+}
+
+.goal-card i{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#eef4ff;
+
+    color:var(--primary);
+
+    font-size:1.8rem;
+
+    margin-bottom:25px;
+
+    transition:.35s;
+
+}
+
+.goal-card:hover i{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    transform:rotate(360deg);
+
+}
+
+.goal-card h3{
+
+    margin-bottom:18px;
+
+    color:#222;
+
+}
+
+.goal-card span{
+
+    display:inline-block;
+
+    background:#eef4ff;
+
+    color:var(--primary);
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.goal-card p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+/*===================================
+ACADEMIC PRAYER
+===================================*/
+
+.prayer-card{
+
+    max-width:850px;
+
+    margin:70px auto 0;
+
+    background:linear-gradient(135deg,#ffffff,#f7f9fc);
+
+    padding:45px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid #eef2ff;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.prayer-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:linear-gradient(90deg,var(--primary),#7c3aed);
+
+}
+
+.prayer-card i{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+    animation:prayFloat 3s ease-in-out infinite;
+
+}
+
+.prayer-card h3{
+
+    font-size:1.8rem;
+
+    margin-bottom:20px;
+
+    color:var(--dark);
+
+}
+
+.prayer-card p{
+
+    color:var(--gray);
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.prayer-card i {
+
+    animation:prayFloat 3s ease-in-out infinite;
+
+    
+
+}
+
+@keyframes prayFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
 
 }
 

@@ -389,3 +389,403 @@ if (certificateGrid) {
     certificateGrid.innerHTML = html;
 
 }
+
+
+const courses = [
+
+    {
+        code: "GST 122",
+        title: "Communication in English Language II",
+        unit: "2 Units",
+        icon: "fa-solid fa-language"
+    },
+
+    {
+        code: "MTH 102",
+        title: "Elementary Mathematics (Calculus) II",
+        unit: "2 Units",
+        icon: "fa-solid fa-square-root-variable"
+    },
+
+    {
+        code: "PHY 102",
+        title: "General Physics II",
+        unit: "2 Units",
+        icon: "fa-solid fa-atom"
+    },
+
+    {
+        code: "PHY 108",
+        title: "General Physics Practical II",
+        unit: "1 Unit",
+        icon: "fa-solid fa-flask"
+    },
+
+    {
+        code: "COS 102",
+        title: "Introduction to Problem-Solving",
+        unit: "3 Units",
+        icon: "fa-solid fa-lightbulb"
+    },
+
+    {
+        code: "MIVA-CSC 106",
+        title: "Introduction to Web Technologies",
+        unit: "3 Units",
+        icon: "fa-solid fa-code"
+    },
+
+    {
+        code: "GST 112",
+        title: "Nigerian Peoples and Culture",
+        unit: "2 Units",
+        icon: "fa-solid fa-earth-africa"
+    },
+
+    {
+        code: "MIVA-COS 111",
+        title: "Technical Certification in Computing I",
+        unit: "1 Unit",
+        icon: "fa-solid fa-laptop-code"
+    }
+
+];
+
+const courseGrid = document.querySelector(".course-grid");
+
+if(courseGrid){
+
+    let html = "";
+
+    courses.forEach(course=>{
+
+        html += `
+
+        <article class="course-card">
+
+        <div class="course-header">
+
+            <i class="${course.icon}"></i>
+
+            <span class="course-code">
+                ${course.code}
+            </span>
+
+        </div>
+
+        <h3>${course.title}</h3>
+
+        <p>${course.unit}</p>
+
+        </article>
+
+        `;
+
+    });
+
+    courseGrid.innerHTML = html;
+
+}
+
+
+/*===================================
+ACADEMIC CALENDAR
+===================================*/
+
+const calendar = document.getElementById("calendar");
+
+if(calendar){
+
+    const monthYear = document.getElementById("monthYear");
+
+    const prevBtn = document.getElementById("prevMonth");
+
+    const nextBtn = document.getElementById("nextMonth");
+
+    let currentDate = new Date();
+
+    const events = {
+
+        "2026-07-08":"assignment",
+
+        "2026-07-11":"quiz",
+
+        "2026-07-16":"project",
+
+        "2026-07-19":"exam",
+
+        "2026-07-24":"assignment"
+
+    };
+
+    function renderCalendar(){
+
+        calendar.innerHTML="";
+
+        const year=currentDate.getFullYear();
+
+        const month=currentDate.getMonth();
+
+        monthYear.textContent=currentDate.toLocaleDateString("en-US",{
+
+            month:"long",
+
+            year:"numeric"
+
+        });
+
+        const weekdays=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+
+        weekdays.forEach(day=>{
+
+            calendar.innerHTML+=`<div class="day-name">${day}</div>`;
+
+        });
+
+        const firstDay=new Date(year,month,1);
+
+        const lastDay=new Date(year,month+1,0);
+
+        let startDay=firstDay.getDay();
+
+        startDay=(startDay===0)?6:startDay-1;
+
+        for(let i=0;i<startDay;i++){
+
+            calendar.innerHTML+=`<div class="day empty"></div>`;
+
+        }
+
+        for(let d=1;d<=lastDay.getDate();d++){
+
+            const dateKey=`${year}-${String(month+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+
+            let extra="";
+
+            let today="";
+
+            const now=new Date();
+
+            if(
+
+                d===now.getDate() &&
+
+                month===now.getMonth() &&
+
+                year===now.getFullYear()
+
+            ){
+
+                today="today";
+
+            }
+
+            if(events[dateKey]){
+
+                extra=`<span class="event-dot ${events[dateKey]}-dot"></span>`;
+
+            }
+
+            calendar.innerHTML+=`
+
+            <div class="day ${today}">
+
+                ${d}
+
+                ${extra}
+
+            </div>
+
+            `;
+
+        }
+
+    }
+
+    prevBtn.addEventListener("click",()=>{
+
+        currentDate.setMonth(currentDate.getMonth()-1);
+
+        renderCalendar();
+
+    });
+
+    nextBtn.addEventListener("click",()=>{
+
+        currentDate.setMonth(currentDate.getMonth()+1);
+
+        renderCalendar();
+
+    });
+
+    renderCalendar();
+
+}
+
+/*===================================
+UPCOMING ACTIVITIES
+===================================*/
+
+const activities = [
+
+    {
+
+        title:"COS102 Assignment",
+
+        description:"Introduction to Problem-Solving Assignment 2",
+
+        date:"18 July 2026",
+
+        type:"Assignment",
+
+        icon:"fa-solid fa-book-open",
+
+        color:"assignment-bg"
+
+    },
+
+    {
+
+        title:"PHY102 Quiz",
+
+        description:"General Physics II Continuous Assessment",
+
+        date:"21 July 2026",
+
+        type:"Quiz",
+
+        icon:"fa-solid fa-pen",
+
+        color:"quiz-bg"
+
+    },
+
+    {
+
+        title:"CSC106 Portfolio Project",
+
+        description:"Portfolio Website Submission",
+
+        date:"25 July 2026",
+
+        type:"Project",
+
+        icon:"fa-solid fa-code",
+
+        color:"project-bg"
+
+    },
+
+    {
+
+        title:"GST122 Examination",
+
+        description:"Communication in English II Final Exam",
+
+        date:"2 August 2026",
+
+        type:"Examination",
+
+        icon:"fa-solid fa-graduation-cap",
+
+        color:"exam-bg"
+
+    }
+
+];
+
+const activitiesList=document.querySelector(".activities-list");
+
+if(activitiesList){
+
+    let html="";
+
+    activities.forEach(activity=>{
+
+        html+=`
+
+        <article class="activity-card">
+
+            <div class="activity-info">
+
+                <h3>${activity.title}</h3>
+
+                <p>${activity.description}</p>
+
+                <span class="activity-date">
+
+                    ${activity.date}
+
+                </span>
+
+            </div>
+
+            <div class="activity-type ${activity.color}">
+
+                <i class="${activity.icon}"></i>
+
+            </div>
+
+        </article>
+
+        `;
+
+    });
+
+    activitiesList.innerHTML=html;
+
+}
+
+const progressBars = document.querySelectorAll(".progress-fill");
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            const bar = entry.target;
+
+            const target = Number(bar.dataset.width);
+
+            const percent = bar
+                .closest(".progress-item")
+                .querySelector(".progress-percent");
+
+            // Animate bar
+            bar.style.width = target + "%";
+
+            // Animate number
+            let count = 0;
+
+            const counter = setInterval(()=>{
+
+                if(count >= target){
+
+                    clearInterval(counter);
+
+                }else{
+
+                    count++;
+
+                    percent.textContent = count + "%";
+
+                }
+
+            },20);
+
+            observer.unobserve(bar);
+
+        }
+
+    });
+
+},{
+    threshold:0.4
+});
+
+progressBars.forEach(bar=>{
+
+    observer.observe(bar);
+
+});
