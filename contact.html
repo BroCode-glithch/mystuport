@@ -126,7 +126,17 @@
                         Fill out the form below and I will get back to you within 24 hours.
                     </p>
 
-                    <form class="contact-form" action="https://formspree.io/f/xblgyqgz" method="POST">
+                    <form id="contact-form" class="contact-form">
+
+                        <div data-fs-success class="fs-success-message">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <p>Thank you! Your message has been sent successfully. I will get back to you soon.</p>
+                        </div>
+
+                        <div data-fs-error class="fs-error-message">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <p>Something went wrong. Please try again or email me directly.</p>
+                        </div>
 
                         <div class="form-row">
 
@@ -137,7 +147,9 @@
                                     id="name"
                                     name="name"
                                     placeholder="Your full name"
+                                    data-fs-field
                                     required>
+                                <span data-fs-error="name" class="fs-field-error"></span>
                             </div>
 
                             <div class="form-group">
@@ -147,7 +159,9 @@
                                     id="email"
                                     name="email"
                                     placeholder="your@email.com"
+                                    data-fs-field
                                     required>
+                                <span data-fs-error="email" class="fs-field-error"></span>
                             </div>
 
                         </div>
@@ -159,7 +173,9 @@
                                 id="subject"
                                 name="subject"
                                 placeholder="What is this about?"
+                                data-fs-field
                                 required>
+                            <span data-fs-error="subject" class="fs-field-error"></span>
                         </div>
 
                         <div class="form-group">
@@ -169,10 +185,12 @@
                                 name="message"
                                 rows="6"
                                 placeholder="Tell me about your project or inquiry..."
+                                data-fs-field
                                 required></textarea>
+                            <span data-fs-error="message" class="fs-field-error"></span>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary" data-fs-submit-btn>
                             <i class="fa-solid fa-paper-plane"></i>
                             Send Message
                         </button>
@@ -396,6 +414,13 @@
     </main>
 
     <script src="assets/jss.js"></script>
+
+    <!-- Formspree Ajax Integration -->
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#contact-form', formId: 'xnjeavbw' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 
