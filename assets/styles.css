@@ -4983,3 +4983,207 @@ INTERACTIVE TASK PLANNER
 
 }
 
+/*===================================
+SCROLL ANIMATIONS
+==================================*/
+
+/* Base: hidden state before animation fires */
+
+[data-animation]{
+
+    opacity:0;
+
+    transition:opacity .6s ease,transform .6s ease;
+
+}
+
+[data-animation="fade-up"]{
+
+    transform:translateY(50px);
+
+}
+
+[data-animation="fade-down"]{
+
+    transform:translateY(-50px);
+
+}
+
+[data-animation="fade-left"]{
+
+    transform:translateX(60px);
+
+}
+
+[data-animation="fade-right"]{
+
+    transform:translateX(-60px);
+
+}
+
+[data-animation="zoom-in"]{
+
+    transform:scale(.85);
+
+}
+
+[data-animation="fade-in"]{
+
+    transform:none;
+
+}
+
+/* Revealed state */
+
+[data-animation].visible{
+
+    opacity:1;
+
+    transform:translate(0) scale(1);
+
+}
+
+/* Stagger delays for grid children */
+
+.stagger-children[data-animation].visible > *:nth-child(1),
+
+.stagger-children[data-animation].visible > *:nth-child(1) [data-child-animation]{
+
+    transition-delay:.0s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(2),
+
+.stagger-children[data-animation].visible > *:nth-child(2) [data-child-animation]{
+
+    transition-delay:.1s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(3),
+
+.stagger-children[data-animation].visible > *:nth-child(3) [data-child-animation]{
+
+    transition-delay:.2s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(4),
+
+.stagger-children[data-animation].visible > *:nth-child(4) [data-child-animation]{
+
+    transition-delay:.3s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(5),
+
+.stagger-children[data-animation].visible > *:nth-child(5) [data-child-animation]{
+
+    transition-delay:.4s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(6),
+
+.stagger-children[data-animation].visible > *:nth-child(6) [data-child-animation]{
+
+    transition-delay:.5s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(7),
+
+.stagger-children[data-animation].visible > *:nth-child(7) [data-child-animation]{
+
+    transition-delay:.6s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(8),
+
+.stagger-children[data-animation].visible > *:nth-child(8) [data-child-animation]{
+
+    transition-delay:.7s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(9),
+
+.stagger-children[data-animation].visible > *:nth-child(9) [data-child-animation]{
+
+    transition-delay:.8s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(10),
+
+.stagger-children[data-animation].visible > *:nth-child(10) [data-child-animation]{
+
+    transition-delay:.9s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(11),
+
+.stagger-children[data-animation].visible > *:nth-child(11) [data-child-animation]{
+
+    transition-delay:1.0s;
+
+}
+
+.stagger-children[data-animation].visible > *:nth-child(12),
+
+.stagger-children[data-animation].visible > *:nth-child(12) [data-child-animation]{
+
+    transition-delay:1.1s;
+
+}
+
+/* Child elements animate from below */
+
+[data-child-animation]{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:opacity .5s ease,transform .5s ease;
+
+}
+
+[data-animation].visible [data-child-animation]{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* Respect reduced motion preference */
+
+@media(prefers-reduced-motion:reduce){
+
+    [data-animation]{
+
+        opacity:1;
+
+        transform:none;
+
+        transition:none;
+
+    }
+
+    [data-child-animation]{
+
+        opacity:1;
+
+        transform:none;
+
+        transition:none;
+
+    }
+
+}
+

@@ -1009,3 +1009,42 @@ function escapeHTML(str) {
 
 // Initial render
 renderTasks();
+
+
+/*===================================
+SCROLL ANIMATIONS
+==================================*/
+
+const animatedElements = document.querySelectorAll("[data-animation]");
+
+if (animatedElements.length > 0) {
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                scrollObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+
+        threshold: 0.15,
+
+        rootMargin: "0px 0px -50px 0px"
+
+    });
+
+    animatedElements.forEach(el => {
+
+        scrollObserver.observe(el);
+
+    });
+
+}
