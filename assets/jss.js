@@ -32,7 +32,7 @@ const projects = [
 
         image: "./assets/img/classattend-portal.png",
 
-        description: "Remote Attendance Made Simple. ClassAttend is a web application that allows students to mark their attendance remotely using a unique code provided by lecturers, HODs, or school administrators. It simplifies attendance management for institutions while providing a seamless experience for students.",
+        description: "Remote Attendance Made Simple. ClassAttend is a product of DailyDew Tech Innovations, a web application that allows students to mark their attendance remotely using a unique code provided by lecturers, HODs, or school administrators. It simplifies attendance management for institutions while providing a seamless experience for students.",
 
         technologies: [
             "HTML",
@@ -52,7 +52,9 @@ const projects = [
 
         demo: "https://classtend.vercel.app/",
 
-        github: "https://github.com/BroCode-glithch/classattend"
+        github: "https://github.com/BroCode-glithch/classattend",
+
+        githubRepoType: "Private"
 
     },
 
@@ -71,7 +73,7 @@ const projects = [
 
         image: "./assets/img/dailydew.png",
 
-        description: "DailyDew CBT is a computer-based testing platform designed for schools and training institutions. It enables administrators to create examinations, manage candidates, monitor performance, and generate detailed results through a modern web interface.",
+        description: "DailyDew CBT is a product of DailyDew Tech Innovations, a computer-based testing platform designed for schools and training institutions. It enables administrators to create examinations, manage candidates, monitor performance, and generate detailed results through a modern web interface.",
 
         technologies: [
             "Laravel",
@@ -87,7 +89,9 @@ const projects = [
 
         demo: "https://cbt.dailydewtech.com.ng/",
 
-        github: "https://github.com/yourusername/dailydew"
+        github: "https://github.com/BroCode-glithch/dailydew",
+
+        githubRepoType: "Private"
 
     },
 
@@ -123,7 +127,9 @@ const projects = [
 
         demo: "https://mamuzworldconsult.vercel.app/",
 
-        github: "https://github.com/yourusername/mamuzworldconsult"
+        github: "https://github.com/BroCode-glithch/mamuzworldconsult",
+
+        githubRepoType: "Private"
 
     },
 
@@ -158,7 +164,89 @@ const projects = [
 
         demo: "https://toluwalaseinteriordecor.vercel.app/",
 
-        github: "https://github.com/yourusername/toluwalaseintdecor"
+        github: "https://github.com/BroCode-glithch/toluwalaseintdecor",
+
+        githubRepoType: "Private",
+
+    },
+
+    {
+        id: 5,
+
+        featured: true,
+
+        title: "AffiDeck - Affiliate Marketing Platform",
+
+        category: "Web Application",
+
+        status: "In Development",
+
+        year: "2026",
+
+        image: "./assets/img/affideck.png",
+
+        description: "AffiDeck is a web application that enables users to create and manage affiliate marketing campaigns. It provides tools for tracking referrals, managing commissions, and analyzing performance metrics to optimize marketing strategies.",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Laravel",
+            "MySQL"
+        ],
+
+        role: "Full Stack Developer",
+
+        client: "AffiDeck",
+
+        duration: "Ongoing",
+
+        demo: "https://affideck.vercel.app/",
+
+        github: "https://github.com/BroCode-glithch/affideck",
+
+        githubRepoType: "Private"
+
+    },
+
+    {
+        id: 6,
+
+        featured: true,
+
+        title: "Certenize - Online Certification Platform",
+
+        category: "Web Application",
+
+        status: "Completed",
+
+        year: "2025",
+
+        image: "./assets/img/certenize.png",
+
+        description: "Earn Immuntable Certifications (EIC). Certenize is an online platform that allows organizations to issue and manage digital certificates. It provides a secure and efficient way to verify credentials, track certificate issuance, and enhance the credibility of certifications.",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Laravel",
+            "MySQL"
+        ],
+
+        role: "Full Stack Developer",
+
+        client: "DailyDew Tech Innovations",
+
+        duration: "2 Months",
+
+        demo: "https://certenize.vercel.app/",
+
+        github: "https://github.com/BroCode-glithch/certenize",
+
+        githubRepoType: "Public"
 
     }
 
@@ -234,6 +322,11 @@ if (projectGrid) {
                     <span>
                         <i class="fa-regular fa-clock"></i>
                         ${project.duration}
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-code-branch"></i>
+                        ${project.githubRepoType}
                     </span>
 
                 </div>
