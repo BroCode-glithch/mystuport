@@ -425,6 +425,103 @@
 
         </section>
 
+        <!-- INTERACTIVE TASK PLANNER -->
+
+        <section class="task-planner">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+                    Planner
+                </span>
+
+                <h2>
+                    My Academic Tasks
+                </h2>
+
+                <p class="section-description">
+                    Add, manage, and track your academic tasks in one place. Mark tasks as
+                    completed when you are done and delete them when no longer needed.
+                </p>
+
+            </div>
+
+            <div class="task-planner-container">
+
+                <div class="task-input-area">
+
+                    <form id="task-form">
+
+                        <div class="task-input-group">
+
+                            <input
+                                type="text"
+                                id="task-input"
+                                placeholder="Add a new task (e.g. Complete MTH102 Assignment)"
+                                autocomplete="off"
+                                required>
+
+                            <select id="task-priority">
+                                <option value="low">Low Priority</option>
+                                <option value="medium" selected>Medium Priority</option>
+                                <option value="high">High Priority</option>
+                            </select>
+
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa-solid fa-plus"></i>
+                                Add Task
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="task-stats">
+
+                    <div class="task-stat">
+                        <span class="task-stat-number" id="total-count">0</span>
+                        <span class="task-stat-label">Total</span>
+                    </div>
+
+                    <div class="task-stat">
+                        <span class="task-stat-number" id="pending-count">0</span>
+                        <span class="task-stat-label">Pending</span>
+                    </div>
+
+                    <div class="task-stat">
+                        <span class="task-stat-number" id="completed-count">0</span>
+                        <span class="task-stat-label">Completed</span>
+                    </div>
+
+                </div>
+
+                <div class="task-filters">
+
+                    <button class="task-filter active" data-filter="all">All</button>
+
+                    <button class="task-filter" data-filter="pending">Pending</button>
+
+                    <button class="task-filter" data-filter="completed">Completed</button>
+
+                </div>
+
+                <ul class="task-list" id="task-list">
+
+                    <!-- Tasks rendered by JavaScript -->
+
+                </ul>
+
+                <div class="task-empty" id="task-empty">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <p>No tasks yet. Add one above to get started!</p>
+                </div>
+
+            </div>
+
+        </section>
+
         <!-- ACADEMIC PROGRESS -->
 
         <section class="academic-progress">

@@ -789,3 +789,223 @@ progressBars.forEach(bar=>{
     observer.observe(bar);
 
 });
+
+
+/*===================================
+INTERACTIVE TASK PLANNER
+==================================*/
+
+const taskForm = document.getElementById("task-form");
+const taskInput = document.getElementById("task-input");
+const taskPriority = document.getElementById("task-priority");
+const taskList = document.getElementById("task-list");
+const taskEmpty = document.getElementById("task-empty");
+const totalCount = document.getElementById("total-count");
+const pendingCount = document.getElementById("pending-count");
+const completedCount = document.getElementById("completed-count");
+const taskFilters = document.querySelectorAll(".task-filter");
+
+let tasks = JSON.parse(localStorage.getItem("academicTasks")) || [];
+let currentFilter = "all";
+
+if (taskForm) {
+
+    // Add Task
+    taskForm.addEventListener("submit", (e) => {
+
+        e.preventDefault();
+
+        const text = taskInput.value.trim();
+
+        if (!text) return;
+
+        const task = {
+
+            id: Date.now(),
+
+            text: text,
+
+            priority: taskPriority.value,
+
+            completed: false,
+
+            date: new Date().toLocaleDateString("en-US", {
+
+                day: "numeric",
+
+                month: "short",
+
+                year: "numeric"
+
+            })
+
+        };
+
+        tasks.unshift(task);
+
+        saveTasks();
+
+        renderTasks();
+
+        taskInput.value = "";
+
+        taskInput.focus();
+
+    });
+
+    // Filter Buttons
+    taskFilters.forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            taskFilters.forEach(b => b.classList.remove("active"));
+
+            btn.classList.add("active");
+
+            currentFilter = btn.dataset.filter;
+
+            renderTasks();
+
+        });
+
+    });
+
+    // Task List Delegation (complete & delete)
+    taskList.addEventListener("click", (e) => {
+
+        const item = e.target.closest(".task-item");
+
+        if (!item) return;
+
+        const id = Number(item.dataset.id);
+
+        // Complete Toggle
+        if (e.target.closest(".task-checkbox")) {
+
+            tasks = tasks.map(t =>
+
+                t.id === id ? { ...t, completed: !t.completed } : t
+
+            );
+
+            saveTasks();
+
+            renderTasks();
+
+        }
+
+        // Delete
+        if (e.target.closest(".task-delete")) {
+
+            tasks = tasks.filter(t => t.id !== id);
+
+            saveTasks();
+
+            renderTasks();
+
+        }
+
+    });
+
+}
+
+function saveTasks() {
+
+    localStorage.setItem("academicTasks", JSON.stringify(tasks));
+
+}
+
+function renderTasks() {
+
+    if (!taskList) return;
+
+    let filtered = tasks;
+
+    if (currentFilter === "pending") {
+
+        filtered = tasks.filter(t => !t.completed);
+
+    } else if (currentFilter === "completed") {
+
+        filtered = tasks.filter(t => t.completed);
+
+    }
+
+    // Update stats
+    const total = tasks.length;
+
+    const completed = tasks.filter(t => t.completed).length;
+
+    const pending = total - completed;
+
+    if (totalCount) totalCount.textContent = total;
+
+    if (pendingCount) pendingCount.textContent = pending;
+
+    if (completedCount) completedCount.textContent = completed;
+
+    // Render
+    if (filtered.length === 0) {
+
+        taskList.innerHTML = "";
+
+        taskEmpty.classList.add("show");
+
+        return;
+
+    }
+
+    taskEmpty.classList.remove("show");
+
+    let html = "";
+
+    filtered.forEach(task => {
+
+        const completedClass = task.completed ? "completed" : "";
+
+        const checkedIcon = task.completed
+
+            ? '<i class="fa-solid fa-check"></i>'
+
+            : '<i class="fa-solid fa-check"></i>';
+
+        html += `
+
+            <li class="task-item priority-${task.priority} ${completedClass}" data-id="${task.id}">
+
+                <div class="task-checkbox">
+                    ${checkedIcon}
+                </div>
+
+                <span class="task-text">${escapeHTML(task.text)}</span>
+
+                <span class="task-priority-badge ${task.priority}">${task.priority}</span>
+
+                <span class="task-date">${task.date}</span>
+
+                <button class="task-delete" title="Delete task">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+
+            </li>
+
+        `;
+
+    });
+
+    taskList.innerHTML = html;
+
+}
+
+function escapeHTML(str) {
+
+    const div = document.createElement("div");
+
+    div.textContent = str;
+
+    return div.innerHTML;
+
+}
+
+// Initial render
+renderTasks();
