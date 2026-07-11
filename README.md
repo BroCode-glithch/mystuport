@@ -264,26 +264,26 @@ This project was developed as the **Practical Term Project** for:
 
 | Requirement | Status |
 |-------------|--------|
-| Semantic HTML elements | ✅ `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>` |
-| Forms | ✅ Contact form with validation |
-| Tables | ✅ Academic details grid |
-| Images | ✅ Profile photo, project screenshots |
-| Hyperlinks | ✅ Navigation, social links, project links |
-| Lists | ✅ Navigation, footer, skill tags |
-| Multimedia | ✅ Font Awesome icons, Google Fonts |
-| External CSS stylesheet | ✅ `assets/styles.css` |
-| Responsive design | ✅ Mobile-first with 3 breakpoints |
-| Flexbox and CSS Grid | ✅ Used throughout all layouts |
-| Navigation styling | ✅ Sticky navbar with mobile hamburger |
-| Animations or transitions | ✅ Scroll animations, hover effects, progress bars |
-| Consistent colour scheme | ✅ CSS custom properties |
-| Mobile-friendly interface | ✅ Tested across all screen sizes |
-| Event handling | ✅ Click, submit, scroll events |
-| DOM manipulation | ✅ Dynamic content rendering |
-| Form validation | ✅ HTML5 + Formspree validation |
-| Dynamic content updates | ✅ Projects, courses, certificates, calendar |
-| Arrays and functions | ✅ Data arrays, render functions, observers |
-| Interactive task management | ✅ Add, complete, delete, filter, persist |
+| Semantic HTML elements |  `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>` |
+| Forms |  Contact form with validation |
+| Tables |  Academic details grid |
+| Images |  Profile photo, project screenshots |
+| Hyperlinks |  Navigation, social links, project links |
+| Lists |  Navigation, footer, skill tags |
+| Multimedia |  Font Awesome icons, Google Fonts |
+| External CSS stylesheet |  `assets/styles.css` |
+| Responsive design |  Mobile-first with 3 breakpoints |
+| Flexbox and CSS Grid |  Used throughout all layouts |
+| Navigation styling |  Sticky navbar with mobile hamburger |
+| Animations or transitions |  Scroll animations, hover effects, progress bars |
+| Consistent colour scheme |  CSS custom properties |
+| Mobile-friendly interface |  Tested across all screen sizes |
+| Event handling |  Click, submit, scroll events |
+| DOM manipulation |  Dynamic content rendering |
+| Form validation |  HTML5 + Formspree validation |
+| Dynamic content updates |  Projects, courses, certificates, calendar |
+| Arrays and functions |  Data arrays, render functions, observers |
+| Interactive task management |  Add, complete, delete, filter, persist |
 
 ---
 
