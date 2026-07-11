@@ -202,7 +202,7 @@ const projects = [
 
         duration: "Ongoing",
 
-        demo: "https://affideck.vercel.app/",
+        demo: "https://affideck.lovable.app/",
 
         github: "https://github.com/BroCode-glithch/affideck",
 
